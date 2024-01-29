@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import "@covalenthq/goldrush-kit/styles.css";
+// import "@covalenthq/goldrush-kit/styles.css";
 import {
   GoldRushProvider,
   NFTWalletTokenListView,
