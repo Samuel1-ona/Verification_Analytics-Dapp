@@ -8,7 +8,7 @@ import {
   TokenBalancesListView,
   TokenTransfersListView,
 } from "@covalenthq/goldrush-kit";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 
 export default function Home() {
   const [address, setAddress] = useState("");
@@ -16,23 +16,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <GoldRushProvider apikey={process.env.NEXT_PUBLIC_COVALENT_API_KEY}>
-        <input
-          type="text"
-          value={address}
-          onChange={(event) => setAddress(event.target.value)}
-          placeholder="Enter address"
-        />
-        <NFTWalletTokenListView
-          address={address}
-          chain_names={[
-            "eth-mainnet",
-            "matic-mainnet",
-            "bsc-mainnet",
-            "avalanche-mainnet",
-            "optimism-mainnet",
-          ]}
-        />
-        {/* <TokenBalancesListView
+        <TokenBalancesListView
           chain_names={[
             "eth-mainnet",
             "matic-mainnet",
@@ -42,7 +26,7 @@ export default function Home() {
           ]}
           hide_small_balances
           address={address}
-        /> */}
+        />
         {/* <TokenTransfersListView
           chain_name="eth-mainnet"
           address={address}
